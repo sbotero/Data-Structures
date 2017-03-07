@@ -1,2 +1,5 @@
 # Ignore source files 
 *.class
+
+# Ignore macOS generated DS_Store file
+.DS_Store
