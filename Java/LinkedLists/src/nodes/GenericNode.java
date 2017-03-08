@@ -10,11 +10,25 @@ public class GenericNode<T> {
 	
 	private T data;
 	private GenericNode<T> next, prev;
+	
 
 	/**
 	 * GenericNode<T> class constructor used to create
 	 * GenericNode<T> class object.
-	 * GenericNode<T> prev is set to null.
+	 * GenericNode<T> next and prev are kept as null.
+	 * 
+	 * @param data T stored in Node
+	 */
+	public GenericNode(T data) {
+		
+		this.data = data;
+	}
+	
+	
+	/**
+	 * GenericNode<T> class constructor used to create
+	 * GenericNode<T> class object.
+	 * GenericNode<T> prev is kept as null.
 	 * 
 	 * @param data T stored in Node
 	 * @param next GenericNode<T> link
@@ -23,8 +37,8 @@ public class GenericNode<T> {
 		
 		this.data = data;
 		this.next = next;
-		this.prev = null;
 	}
+	
 	
 	/**
 	 * GenericNode<T> class constructor used to
@@ -41,6 +55,7 @@ public class GenericNode<T> {
 		this.prev = prev;
 	}
 
+	
 	/**
 	 * Returns stored value of type T data in GenericNode<T>.
 	 * 
@@ -51,6 +66,7 @@ public class GenericNode<T> {
 		return data;
 	}
 
+	
 	/**
 	 * Update value stored in GenericNode<T>.
 	 * 
@@ -61,6 +77,7 @@ public class GenericNode<T> {
 		this.data = data;
 	}
 
+	
 	/**
 	 * Returns the GenericNode<T> next object stored in GenericNode<T>.
 	 * 
@@ -71,6 +88,7 @@ public class GenericNode<T> {
 		return next;
 	}
 
+	
 	/**
 	 * Update GenericNode<T> next object in GenericNode<T>.
 	 * 
@@ -81,6 +99,7 @@ public class GenericNode<T> {
 		this.next = next;
 	}
 
+	
 	/**
 	 * Returns the GenericNode<T> prev object stored in GenericNode<T>.
 	 * 
@@ -91,6 +110,7 @@ public class GenericNode<T> {
 		return prev;
 	}
 
+	
 	/**
 	 * Update GenericNode<T> prev object in GenericNode<T>.
 	 * 
