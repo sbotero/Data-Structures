@@ -12,6 +12,7 @@ public class SinglyLinkedList {
 	private GenericNode<Integer> head, tail;
 	private int size;
 
+	
 	/**
 	 * SinglyLinkedList class constructor creates
 	 * empty linked list.
@@ -22,6 +23,7 @@ public class SinglyLinkedList {
 		this.size = 0;
 	}
 	
+	
 	/**
 	 * Insert Integer data to end of list
 	 * 
@@ -29,10 +31,10 @@ public class SinglyLinkedList {
 	 */
 	public void insert(Integer data) {
 		
-		// Check if empty
-		if (this.head == null) {
+		
+		if (isEmpty()) {
 			
-			this.head = new GenericNode<Integer>(data, this.head);
+			this.head = new GenericNode<Integer>(data);
 			this.tail = this.head;
 		} else {
 			
@@ -45,9 +47,10 @@ public class SinglyLinkedList {
 		this.size++;
 	}
 	
+	
 	/**
-	 * Search for Integer data in linked list and return the index
-	 * of Integer data in list.
+	 * Search for first occurrence Integer data in linked list and 
+	 * return the index of Integer data in list.
 	 * Return -1 if not found.
 	 * 
 	 * @param data Integer to search for
@@ -72,8 +75,9 @@ public class SinglyLinkedList {
 		}
 	}
 	
+	
 	/**
-	 * Removes Integer data from the list.
+	 * Removes first occurrence of Integer data from the list.
 	 * 
 	 * @param data Integer to be removed.
 	 */
@@ -116,8 +120,19 @@ public class SinglyLinkedList {
 		}
 	}
 	
+	
 	/**
-	 * Returns if list is empty.
+	 * Delete all elements in the list.
+	 */
+	public void deleteAll() {
+		
+		this.head = this.tail = null;
+		this.size = 0;
+	}
+
+	
+	/**
+	 * Checks if the linked list is empty.
 	 * 
 	 * @return true if no elements in list. False if at least 1 element in least.
 	 */
@@ -126,6 +141,7 @@ public class SinglyLinkedList {
 		return (this.head == null);
 	}
 
+	
 	/**
 	 * Returns the length of the linked list
 	 * 
@@ -136,6 +152,7 @@ public class SinglyLinkedList {
 		return size;
 	}
 
+	
 	/**
 	 * Format data in SinglyLinkedList object to string
 	 * to allow printing of information.
