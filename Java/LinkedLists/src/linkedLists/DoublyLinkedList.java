@@ -71,6 +71,8 @@ public class DoublyLinkedList {
 	 * 
 	 * If i is equal to size of list, add element to the end.
 	 * 
+	 * Runtime Exception: IndexOutOfBoundsException() if i is invalid.
+	 * 
 	 * @param i int Index in list to insert element
 	 * @param data Integer to be inserted
 	 */
@@ -97,14 +99,12 @@ public class DoublyLinkedList {
 			curr.getPrev().getPrev().setNext(curr.getPrev());
 		
 			size++;
-		}
-		
-		
+		}	
 	}
 	
 	/**
-	 * Search for first occurrence Integer data in linked list and 
-	 * return the index of Integer data in list.
+	 * Search for first occurrence of Integer data in linked list and 
+	 * return the index of the Integer data the list.
 	 * Return -1 if not found.
 	 * 
 	 * @param data Integer to search for
@@ -115,6 +115,7 @@ public class DoublyLinkedList {
 		GenericNode<Integer> curr = this.head;
 		int index = 0;
 		
+		// Iterate through list and look for data match
 		while ((curr != null) && (curr.getData().intValue() != data.intValue())) {
 	
 			curr = curr.getNext();
@@ -130,26 +131,24 @@ public class DoublyLinkedList {
 	}
 	
 	/**
-	 * Removes first occurrence of Integer data from the list.
+	 * Remove first occurrence of Integer data from the list.
 	 * 
 	 * @param data Integer to be removed.
 	 */
 	public void delete(Integer data) {
 		
-		//GenericNode<Integer> prev = null;
 		GenericNode<Integer> curr = this.head;
 		
 		// Search for Integer data to be deleted
 		while ((curr != null) && (curr.getData().intValue() != data.intValue())) {
 
-			//prev = curr;
 			curr = curr.getNext();
 		}
 		
-		// Found data
+		// Check if data to be deleted was found
 		if (curr != null) {
 			
-			// Check if first element
+			// Check if first element is to be deleted
 			if (this.head == curr) {
 				
 				// Check if only 1 element in list
@@ -162,7 +161,7 @@ public class DoublyLinkedList {
 				}
 			} else {
 				
-				//Check if last element
+				//Check if last element is to be deleted
 				if (this.tail == curr) {
 					
 					this.tail = this.tail.getPrev();

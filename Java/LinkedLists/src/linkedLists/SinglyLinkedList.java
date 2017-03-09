@@ -61,6 +61,7 @@ public class SinglyLinkedList {
 		GenericNode<Integer> curr = this.head;
 		int index = 0;
 		
+		// Iterate through list and look for data match
 		while ((curr != null) && (curr.getData().intValue() != data.intValue())) {
 	
 			curr = curr.getNext();
@@ -77,7 +78,7 @@ public class SinglyLinkedList {
 	
 	
 	/**
-	 * Removes first occurrence of Integer data from the list.
+	 * Remove first occurrence of Integer data from the list.
 	 * 
 	 * @param data Integer to be removed.
 	 */
@@ -93,10 +94,10 @@ public class SinglyLinkedList {
 			curr = curr.getNext();
 		}
 		
-		// Found data
+		// Check if data to be deleted found
 		if (curr != null) {
 			
-			// Check if first element
+			// Check if first element is to be deleted
 			if (prev == null) {
 				
 				// Check if only 1 element in list
@@ -107,7 +108,7 @@ public class SinglyLinkedList {
 				}
 			} else {
 				
-				//Check if last element
+				//Check if last element is to be deleted
 				if (this.tail == curr) {
 					prev.setNext(curr.getNext());
 					this.tail = prev;
@@ -143,7 +144,7 @@ public class SinglyLinkedList {
 
 	
 	/**
-	 * Returns the length of the linked list
+	 * Returns the length of the linked list.
 	 * 
 	 * @return size Length of list
 	 */
