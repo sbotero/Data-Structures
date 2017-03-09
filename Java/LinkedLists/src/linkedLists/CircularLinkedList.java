@@ -196,15 +196,18 @@ public class CircularLinkedList {
 	public String toString() {
 		 
 		 return toString(this.head);
-	 }
-
-	 
-	 /**
-      * Private method uses recursive approach to create string representation of
-      * CircularLinkedList.
-      * Serves as helper method to toString() 
-      */
-	 private String toString(GenericNode<String> curr) {
+	}
+	
+	
+	/**
+	 * Private method uses recursive approach to create string representation of
+     * CircularLinkedList.
+     * Serves as helper method to toString().
+	 * 
+	 * @param curr GenericNode<String> Current head of list
+	 * @return result String representation of data in nodes from front to end
+	 */
+	private String toString(GenericNode<String> curr) {
 	       
 	        String result = "";
 
