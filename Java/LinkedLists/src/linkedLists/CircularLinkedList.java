@@ -188,4 +188,35 @@ public class CircularLinkedList {
 		return size;
 	}
 
+	
+	/**
+	 * Format data in CircularLinkedList object to string
+	 * to allow printing of information.
+	 */
+	public String toString() {
+		 
+		 return toString(this.head);
+	 }
+
+	 
+	 /**
+      * Private method uses recursive approach to create string representation of
+      * CircularLinkedList.
+      * Serves as helper method to toString() 
+      */
+	 private String toString(GenericNode<String> curr) {
+	       
+	        String result = "";
+
+	        if(!isEmpty()) {
+	        	
+	            if ( curr.getNext() != this.head ) {
+	                result += "'" + curr.getData() + "'" + ", " + toString(curr.getNext());
+	            } else {
+	                result += "'" + curr.getData() + "'";
+	            }
+	        }
+	        
+	        return  result;
+	  }
 }
